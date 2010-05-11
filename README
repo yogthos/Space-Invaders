@@ -1,0 +1,5 @@
+To run grab maven2, check out the source, and run mvn install in the root folder of the game
+
+after the game builds run:
+
+cd target && java -jar  space-invaders-1.0.one-jar.jar 
