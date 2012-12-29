@@ -3,6 +3,5 @@ Compile using Maven
 git clone https://github.com/yogthos/Space-Invaders.git
 cd Space-Invaders
 mvn install
-cd target 
-java -jar  space-invaders-1.0.one-jar.jar 
+java -jar target/space-invaders-1.0.one-jar.jar
 ```
