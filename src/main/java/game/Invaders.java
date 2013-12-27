@@ -239,7 +239,7 @@ public class Invaders extends Stage implements KeyListener {
 		Rectangle actorBounds = actor.getBounds();
 		for (int i = 0; i < actors.size(); i ++) {
 			Actor otherActor = actors.get(i);
-			if (actor == otherActor) continue;
+			if (null == otherActor || actor.equals(otherActor)) continue;
 			if (actorBounds.intersects(otherActor.getBounds())) {
 				actor.collision(otherActor);
 				otherActor.collision(actor);
