@@ -1,3 +1,8 @@
+# Space Invaders - Software Testing
+
+[![Build Status](https://github.com/Ramez96/Space-Invaders-Software-Testing/actions/workflows/maven.yml/badge.svg)](https://github.com/Ramez96/Space-Invaders-Software-Testing/actions)
+
+
 ### Compiling using Maven 
 ```bash
 git clone https://github.com/yogthos/Space-Invaders.git
