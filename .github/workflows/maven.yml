@@ -27,6 +27,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: run tests and generate coverage
+    - name: Run all the tests
       run: mvn -q verify
 
