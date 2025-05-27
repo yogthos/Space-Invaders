@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
+
 public class InvaderShotTest {
 
     @Test
@@ -14,6 +16,15 @@ public class InvaderShotTest {
         assertNotNull(shot);
         assertEquals(1, shot.bulletSpeed);
         assertFalse(shot.up);
+    }
+    @Test
+    @Disabled("Check code in invader shot, inheritance from actor shot incorrectly, invadershot opposite direction")
+    public void testShotRemovedWhenOutOfBottomBound() {
+        Stage stage = new Stage();
+        InvaderShot shot = new InvaderShot(stage);
+        shot.setY(Stage.HEIGHT + 10); // off screen
+        shot.act();
+        assertTrue(shot.isMarkedForRemoval(), "InvaderShot should be removed when off screen");
     }
 
     @Test

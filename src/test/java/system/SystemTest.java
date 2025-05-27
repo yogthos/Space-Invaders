@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
+
 public class SystemTest {
 
     @Test
@@ -16,8 +18,9 @@ public class SystemTest {
         assertTrue(stage.actors.isEmpty(), "Actors list should be empty on new game");
     }
 
-    /* 
+    
 @Test
+@Disabled("Use Stage.HEIGHT directly, getHeight always = 0 in headless environment")
 public void testGameEndsWhenInvaderReachesBottom() {
     Stage stage = new Stage();
     Invader invader = new Invader(stage);
@@ -33,7 +36,7 @@ public void testGameEndsWhenInvaderReachesBottom() {
 
     assertTrue(stage.isGameOver(), "Game should end when invader reaches or exceeds bottom");
 }
-    */
+    
 
 
     @Test
