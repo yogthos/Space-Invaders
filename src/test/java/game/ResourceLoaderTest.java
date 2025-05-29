@@ -31,13 +31,13 @@ public class ResourceLoaderTest {
     }
 
     @Test
-    @Disabled("refactor code to check for null when fetching sound in resource loader")
     public void testLoadExistingSound() {
         AudioClip clip = ResourceLoader.getInstance().getSound("photon.wav");
         assertNotNull(clip, "Existing sound should load successfully (ensure file exists in res/)");
     }
 
     @Test
+    @Disabled("refactor code to check for null when fetching sound in resource loader")
     public void testLoadNonexistentSoundReturnsNull() {
         AudioClip clip = ResourceLoader.getInstance().getSound("nonexistent_sound.wav");
         assertNull(clip, "Missing sound should return null");

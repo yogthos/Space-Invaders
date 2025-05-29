@@ -1,0 +1,16 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+space-invaders,actors,InvaderShot,0,18,0,2,0,8,0,3,0,2
+space-invaders,actors,Player,12,233,8,27,6,59,8,22,0,9
+space-invaders,actors,Actor.new Runnable() {...},0,15,0,0,0,3,0,2,0,2
+space-invaders,actors,Bunker,57,33,4,4,10,8,5,4,3,2
+space-invaders,actors,Ufo,0,83,0,4,0,22,0,8,0,6
+space-invaders,actors,Actor,18,129,0,2,3,43,2,21,2,20
+space-invaders,actors,Invader,5,194,4,16,2,48,4,15,0,9
+space-invaders,actors,Shot,0,59,0,4,0,16,0,5,0,3
+space-invaders,game,InputHandler.Action,0,15,0,0,0,3,0,1,0,1
+space-invaders,game,ResourceLoader,20,159,2,6,3,34,2,10,0,8
+space-invaders,game,InputHandler,0,52,2,8,0,15,2,5,0,2
+space-invaders,game,Invaders.new Runnable() {...},15,0,0,0,3,0,2,0,2,0
+space-invaders,game,Stage,0,23,0,0,0,9,0,4,0,4
+space-invaders,game,Invaders.new WindowAdapter() {...},5,6,0,0,3,1,1,1,1,1
+space-invaders,game,Invaders,541,242,38,10,118,56,33,8,12,5
