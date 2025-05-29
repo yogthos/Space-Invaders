@@ -31,7 +31,6 @@ public class ResourceLoaderTest {
     }
 
     @Test
-   
     public void testLoadExistingSound() {
         AudioClip clip = ResourceLoader.getInstance().getSound("photon.wav");
         assertNotNull(clip, "Existing sound should load successfully (ensure file exists in res/)");

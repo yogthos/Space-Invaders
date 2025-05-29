@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shot.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">space-invaders</a> &gt; <a href="index.source.html" class="el_package">actors</a> &gt; <span class="el_source">Shot.java</span></div><h1>Shot.java</h1><pre class="source lang-java linenums">package actors;
+
+import game.Stage;
+
+public class Shot extends Actor {
+
+<span class="fc" id="L7">	protected int bulletSpeed = 2;  </span>
+<span class="fc" id="L8">	protected boolean up = true;</span>
+	
+	public Shot(Stage stage) {
+<span class="fc" id="L11">		super(stage);</span>
+<span class="fc" id="L12">		width = 10;</span>
+<span class="fc" id="L13">		height = 15;</span>
+<span class="fc" id="L14">		sprites = new String[]{&quot;shot1.gif&quot;,&quot;shot2.gif&quot;};</span>
+<span class="fc" id="L15">	}</span>
+
+	public void act() {
+<span class="fc" id="L18">		super.act();</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">		if (up)</span>
+<span class="fc" id="L20">			posY -= bulletSpeed;</span>
+		else
+<span class="fc" id="L22">			posY += bulletSpeed;</span>
+		
+<span class="fc bfc" id="L24" title="All 2 branches covered.">		if (posY &lt; 0)</span>
+<span class="fc" id="L25">			setMarkedForRemoval(true);</span>
+<span class="fc" id="L26">	}</span>
+	
+	public void collision(Actor a) {		
+<span class="fc" id="L29">		setMarkedForRemoval(true);</span>
+<span class="fc" id="L30">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
