@@ -6,12 +6,13 @@ import actors.Invader;
 import actors.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Disabled;
 
 import java.lang.reflect.Field;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@Tag("gui")
 public class InvadersTest {
 
     private Invaders invaders;
@@ -29,7 +30,7 @@ public class InvadersTest {
         };
     }
 
-    @Test
+@Test
 public void testInstantiationWithoutGui() {
     Invaders testInvaders = new Invaders() {
         {

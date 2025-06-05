@@ -3,7 +3,7 @@ package game;
 import actors.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.Tag;
 import java.awt.event.KeyEvent;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -46,7 +46,7 @@ public class InputHandlerTest {
     private InputHandler handler;
     private TestPlayer player;
     private TestInvaders invaders;
-
+    @Tag("gui")
     @BeforeEach
     public void setUp() {
         keyPressedCalled = false;
@@ -61,7 +61,7 @@ public class InputHandlerTest {
 
         player = new TestPlayer(invaders);
     }
-
+    @Tag("gui")
     @Test
     public void testHandleKeyPressDelegatesToPlayer() {
         handler = new InputHandler(invaders, player);
@@ -72,7 +72,7 @@ public class InputHandlerTest {
 
         assertTrue(keyPressedCalled, "Player.keyPressed should be called for movement keys");
     }
-
+    @Tag("gui")
     @Test
     public void testHandleKeyReleaseDelegatesToPlayer() {
         handler = new InputHandler(invaders, player);
@@ -83,7 +83,7 @@ public class InputHandlerTest {
 
         assertTrue(keyReleasedCalled, "Player.keyReleased should be called on key release");
     }
-
+    @Tag("gui")
     @Test
     public void testEnterKeyRestartsGameWhenGameOver() {
         handler = new InputHandler(invaders, player);
@@ -97,7 +97,7 @@ public class InputHandlerTest {
         assertTrue(initCalled, "initWorld should be called on ENTER when game over");
         assertTrue(gameCalled, "game should be restarted on ENTER");
     }
-
+    @Tag("gui")
     @Test
     public void testEnterKeyRestartsGameWhenGameWon() {
         handler = new InputHandler(invaders, player);

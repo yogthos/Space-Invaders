@@ -2,6 +2,7 @@ package game;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 
 import java.applet.AudioClip;
 import java.awt.Image;
@@ -9,7 +10,6 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 public class ResourceLoaderTest {
 
     @Test
@@ -42,7 +42,9 @@ public class ResourceLoaderTest {
         assertNull(clip, "Missing sound should return null");
     }
 
+    
     @Test
+    @Tag("gui")
     public void testCompatibleImageCreation() {
         BufferedImage compatible = ResourceLoader.createCompatible(100, 50, java.awt.Transparency.OPAQUE);
         assertNotNull(compatible, "Compatible image should be created");

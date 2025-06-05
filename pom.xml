@@ -57,9 +57,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
-                
+                <version>3.2.5</version>
+                <configuration>
+                    <excludedGroups>gui</excludedGroups>
+                    <provider>
+                        <name>junit-platform</name>
+                    </provider>
+                </configuration>
             </plugin>
+
 
             <!-- JaCoCo for code coverage -->
             <plugin>
