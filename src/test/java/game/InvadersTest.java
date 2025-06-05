@@ -1,4 +1,5 @@
 package game;
+import java.awt.image.BufferStrategy;
 
 import actors.Actor;
 import actors.Invader;
@@ -17,8 +18,7 @@ public class InvadersTest {
 
     @BeforeEach
     public void setup() {
-        // Skip GUI rendering: suppress constructor GUI calls
-        // This test will not work in headless CI without proper JavaFX mocking
+      
         invaders = new Invaders() {
             @Override
             public void initWorld() {
@@ -30,10 +30,33 @@ public class InvadersTest {
     }
 
     @Test
-    @Disabled("Relies on graphics environment")
-    public void testInstantiation() {
-        assertNotNull(new Invaders());
-    }
+public void testInstantiationWithoutGui() {
+    Invaders testInvaders = new Invaders() {
+        {
+            
+            this.strategy = null;
+        }
+
+        @Override
+        public void initWorld() {
+            this.actors = new java.util.ArrayList<>();
+            this.gameOver = false;
+            this.gameWon = false;
+        }
+
+        @Override
+        public void createBufferStrategy(int numBuffers) {
+            
+        }
+
+        @Override
+        public BufferStrategy getBufferStrategy() {
+            return null; 
+        }
+    };
+
+    assertNotNull(testInvaders, "Should instantiate subclass of Invaders");
+}
 
     @Test
     public void testAddInvadersAddsActors() {
@@ -70,7 +93,7 @@ public class InvadersTest {
         // No invaders added = game should be won
         invaders.actors.clear();
 
-        // Inject player
+      
         Field playerField = Invaders.class.getDeclaredField("player");
         playerField.setAccessible(true);
         playerField.set(invaders, new Player(invaders));

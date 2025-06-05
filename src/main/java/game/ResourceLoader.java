@@ -35,21 +35,24 @@ public class ResourceLoader implements ImageObserver {
 		
 	}
 	public AudioClip getSound(String name) {
-		AudioClip sound = sounds.get(name);
-		if (null != sound)
-			return sound;
-		
-		URL url = null;
-		try {
-			url = getClass().getClassLoader().getResource("res/" + name);
-			sound = Applet.newAudioClip(url);
-			sounds.put(name,sound);			
-		} catch (Exception e) {
-			System.err.println("Cound not locate sound " + name + ": " + e.getMessage());			
-		}		
-		
-		return sound;
-	}
+    AudioClip sound = sounds.get(name);
+    if (sound != null)
+        return sound;
+    URL url = getClass().getClassLoader().getResource("res/" + name);
+    if (url == null) {
+        System.err.println("Could not locate sound: " + name);
+        return null;
+    }
+    try {
+        sound = Applet.newAudioClip(url);
+        sounds.put(name, sound);
+    } catch (Exception e) {
+        System.err.println("Failed to load sound: " + name + " - " + e.getMessage());
+        return null;
+    }
+    return sound;
+}
+
 	
 	/**
 	 * creates a compatible image in memory, faster than using the original image format

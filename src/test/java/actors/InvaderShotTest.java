@@ -18,7 +18,6 @@ public class InvaderShotTest {
         assertFalse(shot.up);
     }
     @Test
-    @Disabled("Check code in invader shot, inheritance from actor shot incorrectly, invadershot opposite direction")
     public void testShotRemovedWhenOutOfBottomBound() {
         Stage stage = new Stage();
         InvaderShot shot = new InvaderShot(stage);

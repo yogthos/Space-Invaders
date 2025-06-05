@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: system.SystemTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.006 s - in system.SystemTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.004 s - in system.SystemTest

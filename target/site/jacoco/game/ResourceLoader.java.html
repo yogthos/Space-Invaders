@@ -31,7 +31,7 @@ public class ResourceLoader implements ImageObserver {
 	public void cleanup() {
 <span class="fc bfc" id="L32" title="All 2 branches covered.">		for (AudioClip sound : sounds.values()) {</span>
 <span class="fc" id="L33">			sound.stop();</span>
-<span class="fc" id="L34">		}</span>
+		}
 		
 <span class="fc" id="L36">	}</span>
 	public AudioClip getSound(String name) {
@@ -44,9 +44,9 @@ public class ResourceLoader implements ImageObserver {
 <span class="fc" id="L44">			url = getClass().getClassLoader().getResource(&quot;res/&quot; + name);</span>
 <span class="fc" id="L45">			sound = Applet.newAudioClip(url);</span>
 <span class="fc" id="L46">			sounds.put(name,sound);			</span>
-<span class="nc" id="L47">		} catch (Exception e) {</span>
+<span class="pc" id="L47">		} catch (Exception e) {</span>
 <span class="nc" id="L48">			System.err.println(&quot;Cound not locate sound &quot; + name + &quot;: &quot; + e.getMessage());			</span>
-<span class="fc" id="L49">		}		</span>
+		}		
 		
 <span class="fc" id="L51">		return sound;</span>
 	}
@@ -62,7 +62,7 @@ public class ResourceLoader implements ImageObserver {
 			int transparency) {
 <span class="fc" id="L63">		GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();</span>
 <span class="fc" id="L64">		BufferedImage compatible = gc.createCompatibleImage(width, height,</span>
-				transparency);
+<span class="fc" id="L65">				transparency);</span>
 <span class="fc" id="L66">		return compatible;		</span>
 	}
 
@@ -87,7 +87,7 @@ public class ResourceLoader implements ImageObserver {
 <span class="fc" id="L87">			images.put(name,compatible);			</span>
 <span class="fc" id="L88">		} catch (Exception e) {</span>
 <span class="fc" id="L89">			System.err.println(&quot;Cound not locate image &quot; + name + &quot;: &quot; + e.getMessage());			</span>
-<span class="fc" id="L90">		}		</span>
+		}		
 		
 <span class="fc" id="L92">		return image;</span>
 	}

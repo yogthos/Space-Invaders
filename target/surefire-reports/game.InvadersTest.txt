@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: game.InvadersTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.206 s - in game.InvadersTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.232 s - in game.InvadersTest
